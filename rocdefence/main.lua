@@ -12,4 +12,4 @@ screenRight = display.viewableContentWidth + display.screenOriginX
 --show background image
 local background = display.newImageRect("images/level1.png", (1.33 * screenRight), (screenBottom), native.systemFont, 45)
 background.x = display.contentCenterX
-background.y = display.contentCenterY
+background.y = display.contentCenterYx
