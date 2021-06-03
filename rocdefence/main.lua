@@ -15,5 +15,11 @@ background.x = display.contentCenterX
 background.y = display.contentCenterY
 
 local enemy = display.newImageRect("images/circle.png", 100, 100)
-enemy.x = 500
+enemy.x = -100
 enemy.y = 300
+
+local function rechtsfunctie()
+	transition.to(enemy, {time=10000, x=enemy.x+ 1200})
+	transition.to (background, {x=background.x - 30})
+end
+rechtsfunctie()
