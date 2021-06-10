@@ -23,3 +23,23 @@ local function rechtsfunctie()
 	transition.to (background, {x=background.x - 30})
 end
 rechtsfunctie()
+
+local enemy1 = display.newImageRect("images/circle2.png", 100, 100)
+enemy1.x = -100
+enemy1.y = 300
+
+local function rechtsfunctie1()
+	transition.to(enemy1, {time=13000, x=enemy1.x+ 1200})
+	transition.to (background, {x=background.x - 30})
+end
+rechtsfunctie1()
+
+local enemy2 = display.newImageRect("images/circle1.png", 100, 100)
+enemy2.x = -100
+enemy2.y = 300
+
+local function rechtsfunctie2()
+	transition.to(enemy2, {time=19000, x=enemy2.x+ 1200})
+	transition.to (background, {x=background.x - 30})
+end
+rechtsfunctie2()
