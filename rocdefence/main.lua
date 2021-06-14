@@ -64,23 +64,33 @@ end
 rechtsfunctie2()
 
 
+local cannon1 = display.newImageRect( "sprites/cannon/cannon1.png", 150, 150 )
+cannon1.x = display.contentCenterX
+cannon1.y = display.contentCenterY
 
-local player1 = display.newImageRect( "sprites/player/player1.png", 50, 50 )
-player1.x = display.contentCenterX
-player1.y = display.contentCenterY
+local cannon2 = display.newImageRect( "sprites/cannon/cannon2.png", 200, 200 )
+cannon2.x = display.contentCenterX
+cannon2.y = display.contentCenterY
 
+local cannon3 = display.newImageRect( "sprites/cannon/cannon3.png", 500, 500 )
+cannon3.x = display.contentCenterX
+cannon3.y = display.contentCenterY
 
-local function dragPlayer1( event )
+local cannon4 = display.newImageRect( "sprites/cannon/cannon4.png", 200, 200 )
+cannon4.x = display.contentCenterX
+cannon4.y = display.contentCenterY
+
+local function dragcannon1( event )
  
-    local player1 = event.target
+    local cannon1 = event.target
     local phase = event.phase
     if ( "began" == phase ) then
-        display.currentStage:setFocus( player1 )
-        player1.touchOffsetX = event.x - player1.x
-        player1.touchOffsetY = event.y - player1.y
+        display.currentStage:setFocus( cannon1 )
+        cannon1.touchOffsetX = event.x - cannon1.x
+        cannon1.touchOffsetY = event.y - cannon1.y
     elseif ( "moved" == phase ) then
-        player1.x = event.x - player1.touchOffsetX
-        player1.y = event.y - player1.touchOffsetY
+        cannon1.x = event.x - cannon1.touchOffsetX
+        cannon1.y = event.y - cannon1.touchOffsetY
     elseif ( "ended" == phase or "cancelled" == phase ) then
         display.currentStage:setFocus( nil )
         return true  -- Prevents touch propagation to underlying objects
@@ -88,4 +98,61 @@ local function dragPlayer1( event )
 
 end
 
-player1:addEventListener( "touch", dragPlayer1 )
+local function dragcannon2( event )
+ 
+    local cannon2 = event.target
+    local phase = event.phase
+    if ( "began" == phase ) then
+        display.currentStage:setFocus( cannon2 )
+        cannon2.touchOffsetX = event.x - cannon2.x
+        cannon2.touchOffsetY = event.y - cannon2.y
+    elseif ( "moved" == phase ) then
+        cannon2.x = event.x - cannon2.touchOffsetX
+        cannon2.y = event.y - cannon2.touchOffsetY
+    elseif ( "ended" == phase or "cancelled" == phase ) then
+        display.currentStage:setFocus( nil )
+        return true  -- Prevents touch propagation to underlying objects
+    end
+
+end
+
+local function dragcannon3( event )
+ 
+    local cannon3 = event.target
+    local phase = event.phase
+    if ( "began" == phase ) then
+        display.currentStage:setFocus( cannon3 )
+        cannon3.touchOffsetX = event.x - cannon3.x
+        cannon3.touchOffsetY = event.y - cannon3.y
+    elseif ( "moved" == phase ) then
+        cannon3.x = event.x - cannon3.touchOffsetX
+        cannon3.y = event.y - cannon3.touchOffsetY
+    elseif ( "ended" == phase or "cancelled" == phase ) then
+        display.currentStage:setFocus( nil )
+        return true  -- Prevents touch propagation to underlying objects
+    end
+
+end
+
+local function dragcannon4( event )
+ 
+    local cannon4 = event.target
+    local phase = event.phase
+    if ( "began" == phase ) then
+        display.currentStage:setFocus( cannon4 )
+        cannon4.touchOffsetX = event.x - cannon4.x
+        cannon4.touchOffsetY = event.y - cannon4.y
+    elseif ( "moved" == phase ) then
+        cannon4.x = event.x - cannon4.touchOffsetX
+        cannon4.y = event.y - cannon4.touchOffsetY
+    elseif ( "ended" == phase or "cancelled" == phase ) then
+        display.currentStage:setFocus( nil )
+        return true  -- Prevents touch propagation to underlying objects
+    end
+
+end
+
+cannon1:addEventListener( "touch", dragcannon1 )
+cannon2:addEventListener( "touch", dragcannon2 )
+cannon3:addEventListener( "touch", dragcannon3 )
+cannon4:addEventListener( "touch", dragcannon4 )
