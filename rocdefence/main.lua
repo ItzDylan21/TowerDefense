@@ -3,6 +3,7 @@ local screenBottom
 local screenLeft
 local screenRight
 local count = 0
+local i = 0
 local spawnParams = {
     x = -100,
     y = 300,
@@ -26,19 +27,19 @@ background.y = display.contentCenterY
 
 
 local function createEnemy()
- 
-  local enemy = display.newImageRect("images/circle.png", 100, 100)
-  table.insert( enemyTable, enemy )
-  enemy.myName = "enemy"
-
-  enemy.x = -100
-  enemy.y = 300
-  transition.to(enemy, {delay=1000, time=10000, x=enemy.x + 1200} )
+    local enemy = display.newImageRect("images/circle.png", 100, 100)
+    table.insert( enemyTable, enemy )
+    enemy.myName = "enemy"
+    enemyTable[i] = display.newImageRect("images/circle.png", 100, 100)
+    enemyTable[i].x = -100
+    enemyTable[i].y = 300
+    transition.to(enemyTable[i], {delay=1000, time=10000, x=enemy.x + 1200} )
 end
 
 while (count < 10) do
 	createEnemy()
 	count = count + 1
+    i = i + 1
 end
 
 
